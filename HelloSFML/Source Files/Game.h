@@ -58,6 +58,7 @@ class Game
     void updateMousePosition();
     void update();
     void render();
+    void killEnemy();
 };
 
 

@@ -58,6 +58,7 @@ const bool Game::isRunning() const
 void Game::update()
 {
     pollEvents();
+    killEnemy();
     updateMousePosition();
     Game::updateEnemy();
     //Game::enemy.setPosition(Game::mousePositionWindow.x,Game::mousePositionWindow.y);
@@ -84,10 +85,14 @@ void Game::pollEvents()
             Game::window->close();
             break;
         case sf::Event::KeyPressed:
-            if (Game::event.key.code == sf::Keyboard::Escape)
+            if (Game::event.key.code == sf::Keyboard::Escape){
                 Game::window->close();
-            break;
+            }
 
+            if (Game::event.key.code == sf::Mouse::Left){
+                std::cout << "mouseLeftPressed"<< std::endl;
+            }
+            break;
         }
     }
 }
@@ -152,6 +157,20 @@ void Game::renderEnemy()
     for (auto& currentEnemy : Game::enemies)
     {
         Game::window->draw(currentEnemy);
+    }
+}
+void Game::killEnemy()
+{
+    while (Game::window->isOpen())
+    {
+        switch (Game::event.type)
+        {
+        case sf::Event::KeyPressed:
+            if (Game::event.key.code == sf::Mouse::Left){
+                std::cout << "mouseLeftPressed"<< std::endl;
+            }
+            break;
+        }
     }
 }
 
