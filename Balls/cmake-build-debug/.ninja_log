@@ -1,0 +1,22 @@
+# ninja log v5
+1	155	6844158790539305	build.ninja	30a0f5d0c6e4b911
+1	61	6844158791489581	CMakeFiles/Balls.dir/main.cpp.obj	85a4b941a04011a9
+8	67	6844158791539563	CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj	9f74db543ee3d022
+67	228	6844158793149803	Balls.exe	5060cc3d43a7cd6a
+0	848	6844215996512127	CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj	9f74db543ee3d022
+8	851	6844215996512127	CMakeFiles/Balls.dir/main.cpp.obj	85a4b941a04011a9
+851	1084	6844215998872745	Balls.exe	5060cc3d43a7cd6a
+3	778	6844218666578305	CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj	9f74db543ee3d022
+778	1285	6844218671618293	Balls.exe	5060cc3d43a7cd6a
+3	774	6844218844189238	CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj	9f74db543ee3d022
+774	1195	6844218848369043	Balls.exe	5060cc3d43a7cd6a
+3	778	6844219176138994	CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj	9f74db543ee3d022
+778	1213	6844219180459543	Balls.exe	5060cc3d43a7cd6a
+3	769	6844219334764625	CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj	9f74db543ee3d022
+769	1189	6844219338944814	Balls.exe	5060cc3d43a7cd6a
+3	774	6844219417672805	CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj	9f74db543ee3d022
+774	1193	6844219421832837	Balls.exe	5060cc3d43a7cd6a
+3	782	6844219570299565	CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj	9f74db543ee3d022
+782	1198	6844219574429568	Balls.exe	5060cc3d43a7cd6a
+3	768	6844220465160889	CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj	9f74db543ee3d022
+768	1187	6844220469330892	Balls.exe	5060cc3d43a7cd6a
