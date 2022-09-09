@@ -58,7 +58,6 @@ const bool Game::isRunning() const
 void Game::update()
 {
     pollEvents();
-    killEnemy();
     updateMousePosition();
     Game::updateEnemy();
     //Game::enemy.setPosition(Game::mousePositionWindow.x,Game::mousePositionWindow.y);
@@ -85,15 +84,23 @@ void Game::pollEvents()
             Game::window->close();
             break;
         case sf::Event::KeyPressed:
-            if (Game::event.key.code == sf::Keyboard::Escape){
+            if (Game::event.key.code == sf::Keyboard::Escape)
+            {
                 Game::window->close();
             }
-
-            if (Game::event.key.code == sf::Mouse::Left){
-                std::cout << "mouseLeftPressed"<< std::endl;
+            break;
+        case sf::Event::MouseButtonPressed:
+            if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+            {
+                std::cout << "mouseLeftPressed" << std::endl;
             }
             break;
+        case sf::Event::Resized:
+            std::cout << "new width: " << event.size.width << std::endl;
+            std::cout << "new height: " << event.size.height << std::endl;
+            break;
         }
+
     }
 }
 void Game::updateMousePosition()
@@ -106,7 +113,7 @@ void Game::spawnEnemy()
 {
     Game::enemy.setPosition(
         static_cast<float>(rand() % static_cast<int>(Game::window->getSize().x - Game::enemy.getSize().x / 2)),
-        static_cast<float>(rand() % static_cast<int>((Game::window->getSize().y /2) - Game::enemy.getSize().y)));
+        static_cast<float>(rand() % static_cast<int>((Game::window->getSize().y / 2) - Game::enemy.getSize().y)));
     Game::enemy.setFillColor(sf::Color::Green);
     Game::enemies.push_back(Game::enemy);
 
@@ -144,11 +151,12 @@ void Game::updateEnemy()
         //std::cout << Game::window->getSize().y<< std::endl;
         if (Game::enemies[i].getPosition().y > Game::window->getSize().y)
         {
-            deleted = true;
+            Game::enemies.erase(Game::enemies.begin() + i);
         }
         if (deleted)
         {
             Game::enemies.erase(Game::enemies.begin() + i);
+            deleted = false;
         }
     }
 }
@@ -161,18 +169,9 @@ void Game::renderEnemy()
 }
 void Game::killEnemy()
 {
-    while (Game::window->isOpen())
-    {
-        switch (Game::event.type)
-        {
-        case sf::Event::KeyPressed:
-            if (Game::event.key.code == sf::Mouse::Left){
-                std::cout << "mouseLeftPressed"<< std::endl;
-            }
-            break;
-        }
-    }
+
 }
+
 
 
 
