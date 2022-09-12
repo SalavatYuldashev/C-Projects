@@ -3,8 +3,10 @@
 
 #include <iostream>
 #include <ctime>
+#include <vector>
 
 #include "Player.h"
+#include "SwagBall.h"
 
 
 class Game
@@ -16,6 +18,10 @@ class Game
     bool endGame;
     sf::Event event;
     Player* player = new Player(300.,300.);
+    std::vector<SwagBall> swagBalls;
+    float spawnTimerMax;
+    float spawnTimer;
+    int maxSwagBalls;
 
     //Private functions
     void initWindow();
@@ -34,10 +40,8 @@ class Game
     void update();
     [[nodiscard]] bool running() const;
     void pollEvents();
-
-
-
-
+    void spawnSwagBalls();
+    void updateCollision();
 };
 
 

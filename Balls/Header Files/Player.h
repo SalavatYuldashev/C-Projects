@@ -13,6 +13,9 @@ class Player
     //Variables
     sf::RectangleShape shape;
     float movementSpeed;
+    int hp;
+    int hpMax;
+    int points;
 
     //Private function
     void initVariables();
@@ -25,7 +28,9 @@ class Player
 
     //Public function
     void render(sf::RenderTarget* target);
-    void update();
+    void update(const sf::RenderTarget* target);
+    void updateWindowBoundsCollision(sf::RenderTarget* target);
     void updateInput();
+    const sf::RectangleShape& getShape() const;
 };
 

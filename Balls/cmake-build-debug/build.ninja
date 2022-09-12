@@ -73,6 +73,14 @@ build CMakeFiles/Balls.dir/Source_Files/Player.cpp.obj: CXX_COMPILER__Balls_Debu
   OBJECT_DIR = CMakeFiles\Balls.dir
   OBJECT_FILE_DIR = CMakeFiles\Balls.dir\Source_Files
 
+build CMakeFiles/Balls.dir/Source_Files/SwagBall.cpp.obj: CXX_COMPILER__Balls_Debug F$:/Data/GitHub/Public/C-Projects/Balls/Source$ Files/SwagBall.cpp || cmake_object_order_depends_target_Balls
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\Balls.dir\Source_Files\SwagBall.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  INCLUDES = -isystem F:/Data/C++/SFML/include
+  OBJECT_DIR = CMakeFiles\Balls.dir
+  OBJECT_FILE_DIR = CMakeFiles\Balls.dir\Source_Files
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Balls
@@ -81,7 +89,7 @@ build CMakeFiles/Balls.dir/Source_Files/Player.cpp.obj: CXX_COMPILER__Balls_Debu
 #############################################
 # Link the executable Balls.exe
 
-build Balls.exe: CXX_EXECUTABLE_LINKER__Balls_Debug CMakeFiles/Balls.dir/main.cpp.obj CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj CMakeFiles/Balls.dir/Source_Files/Player.cpp.obj | F$:/Data/C++/SFML/lib/libsfml-system-s-d.a F$:/Data/C++/SFML/lib/libsfml-window-s-d.a F$:/Data/C++/SFML/lib/libsfml-graphics-s-d.a F$:/Data/C++/SFML/lib/libsfml-audio-s-d.a F$:/Data/C++/SFML/lib/libsfml-network-s-d.a F$:/Data/C++/SFML/lib/libsfml-window-s-d.a F$:/Data/C++/SFML/lib/libfreetype.a F$:/Data/C++/SFML/lib/libopenal32.a F$:/Data/C++/SFML/lib/libvorbisfile.a F$:/Data/C++/SFML/lib/libvorbisenc.a F$:/Data/C++/SFML/lib/libvorbis.a F$:/Data/C++/SFML/lib/libogg.a F$:/Data/C++/SFML/lib/libFLAC.a F$:/Data/C++/SFML/lib/libsfml-system-s-d.a
+build Balls.exe: CXX_EXECUTABLE_LINKER__Balls_Debug CMakeFiles/Balls.dir/main.cpp.obj CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj CMakeFiles/Balls.dir/Source_Files/Player.cpp.obj CMakeFiles/Balls.dir/Source_Files/SwagBall.cpp.obj | F$:/Data/C++/SFML/lib/libsfml-system-s-d.a F$:/Data/C++/SFML/lib/libsfml-window-s-d.a F$:/Data/C++/SFML/lib/libsfml-graphics-s-d.a F$:/Data/C++/SFML/lib/libsfml-audio-s-d.a F$:/Data/C++/SFML/lib/libsfml-network-s-d.a F$:/Data/C++/SFML/lib/libsfml-window-s-d.a F$:/Data/C++/SFML/lib/libfreetype.a F$:/Data/C++/SFML/lib/libopenal32.a F$:/Data/C++/SFML/lib/libvorbisfile.a F$:/Data/C++/SFML/lib/libvorbisenc.a F$:/Data/C++/SFML/lib/libvorbis.a F$:/Data/C++/SFML/lib/libogg.a F$:/Data/C++/SFML/lib/libFLAC.a F$:/Data/C++/SFML/lib/libsfml-system-s-d.a
   FLAGS = -g
   LINK_LIBRARIES = F:/Data/C++/SFML/lib/libsfml-system-s-d.a  F:/Data/C++/SFML/lib/libsfml-window-s-d.a  F:/Data/C++/SFML/lib/libsfml-graphics-s-d.a  F:/Data/C++/SFML/lib/libsfml-audio-s-d.a  F:/Data/C++/SFML/lib/libsfml-network-s-d.a  F:/Data/C++/SFML/lib/libsfml-window-s-d.a  -lgdi32  -lOpenGL32  F:/Data/C++/SFML/lib/libfreetype.a  F:/Data/C++/SFML/lib/libopenal32.a  F:/Data/C++/SFML/lib/libvorbisfile.a  F:/Data/C++/SFML/lib/libvorbisenc.a  F:/Data/C++/SFML/lib/libvorbis.a  F:/Data/C++/SFML/lib/libogg.a  F:/Data/C++/SFML/lib/libFLAC.a  F:/Data/C++/SFML/lib/libsfml-system-s-d.a  -lwinmm  -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Balls.dir
