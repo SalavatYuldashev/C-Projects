@@ -173,8 +173,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "F:/Data/C++/Balls/cmake-build-debug",
-		"source" : "F:/Data/C++/Balls"
+		"build" : "F:/Data/GitHub/Public/C-Projects/Balls/cmake-build-debug",
+		"source" : "F:/Data/GitHub/Public/C-Projects/Balls"
 	},
 	"version" : 
 	{

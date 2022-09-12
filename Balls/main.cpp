@@ -9,6 +9,12 @@ int main()
     Game* game = new Game;
 
     //Game loop
+    while (game->running())
+    {
+        game->render();
+        game->update();
+
+    }
 
     return 0;
 }

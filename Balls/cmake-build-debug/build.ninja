@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = F$:/Data/C++/Balls/cmake-build-debug/
+cmake_ninja_workdir = F$:/Data/GitHub/Public/C-Projects/Balls/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target Balls
 
@@ -49,7 +49,7 @@ cmake_ninja_workdir = F$:/Data/C++/Balls/cmake-build-debug/
 
 build cmake_object_order_depends_target_Balls: phony || CMakeFiles/Balls.dir
 
-build CMakeFiles/Balls.dir/main.cpp.obj: CXX_COMPILER__Balls_Debug F$:/Data/C++/Balls/main.cpp || cmake_object_order_depends_target_Balls
+build CMakeFiles/Balls.dir/main.cpp.obj: CXX_COMPILER__Balls_Debug F$:/Data/GitHub/Public/C-Projects/Balls/main.cpp || cmake_object_order_depends_target_Balls
   DEFINES = -DSFML_STATIC
   DEP_FILE = CMakeFiles\Balls.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++23
@@ -57,9 +57,17 @@ build CMakeFiles/Balls.dir/main.cpp.obj: CXX_COMPILER__Balls_Debug F$:/Data/C++/
   OBJECT_DIR = CMakeFiles\Balls.dir
   OBJECT_FILE_DIR = CMakeFiles\Balls.dir
 
-build CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj: CXX_COMPILER__Balls_Debug F$:/Data/C++/Balls/Source$ Files/Game.cpp || cmake_object_order_depends_target_Balls
+build CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj: CXX_COMPILER__Balls_Debug F$:/Data/GitHub/Public/C-Projects/Balls/Source$ Files/Game.cpp || cmake_object_order_depends_target_Balls
   DEFINES = -DSFML_STATIC
   DEP_FILE = CMakeFiles\Balls.dir\Source_Files\Game.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  INCLUDES = -isystem F:/Data/C++/SFML/include
+  OBJECT_DIR = CMakeFiles\Balls.dir
+  OBJECT_FILE_DIR = CMakeFiles\Balls.dir\Source_Files
+
+build CMakeFiles/Balls.dir/Source_Files/Player.cpp.obj: CXX_COMPILER__Balls_Debug F$:/Data/GitHub/Public/C-Projects/Balls/Source$ Files/Player.cpp || cmake_object_order_depends_target_Balls
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\Balls.dir\Source_Files\Player.cpp.obj.d
   FLAGS = -g -std=gnu++23
   INCLUDES = -isystem F:/Data/C++/SFML/include
   OBJECT_DIR = CMakeFiles\Balls.dir
@@ -73,7 +81,7 @@ build CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj: CXX_COMPILER__Balls_Debug 
 #############################################
 # Link the executable Balls.exe
 
-build Balls.exe: CXX_EXECUTABLE_LINKER__Balls_Debug CMakeFiles/Balls.dir/main.cpp.obj CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj | F$:/Data/C++/SFML/lib/libsfml-system-s-d.a F$:/Data/C++/SFML/lib/libsfml-window-s-d.a F$:/Data/C++/SFML/lib/libsfml-graphics-s-d.a F$:/Data/C++/SFML/lib/libsfml-audio-s-d.a F$:/Data/C++/SFML/lib/libsfml-network-s-d.a F$:/Data/C++/SFML/lib/libsfml-window-s-d.a F$:/Data/C++/SFML/lib/libfreetype.a F$:/Data/C++/SFML/lib/libopenal32.a F$:/Data/C++/SFML/lib/libvorbisfile.a F$:/Data/C++/SFML/lib/libvorbisenc.a F$:/Data/C++/SFML/lib/libvorbis.a F$:/Data/C++/SFML/lib/libogg.a F$:/Data/C++/SFML/lib/libFLAC.a F$:/Data/C++/SFML/lib/libsfml-system-s-d.a
+build Balls.exe: CXX_EXECUTABLE_LINKER__Balls_Debug CMakeFiles/Balls.dir/main.cpp.obj CMakeFiles/Balls.dir/Source_Files/Game.cpp.obj CMakeFiles/Balls.dir/Source_Files/Player.cpp.obj | F$:/Data/C++/SFML/lib/libsfml-system-s-d.a F$:/Data/C++/SFML/lib/libsfml-window-s-d.a F$:/Data/C++/SFML/lib/libsfml-graphics-s-d.a F$:/Data/C++/SFML/lib/libsfml-audio-s-d.a F$:/Data/C++/SFML/lib/libsfml-network-s-d.a F$:/Data/C++/SFML/lib/libsfml-window-s-d.a F$:/Data/C++/SFML/lib/libfreetype.a F$:/Data/C++/SFML/lib/libopenal32.a F$:/Data/C++/SFML/lib/libvorbisfile.a F$:/Data/C++/SFML/lib/libvorbisenc.a F$:/Data/C++/SFML/lib/libvorbis.a F$:/Data/C++/SFML/lib/libogg.a F$:/Data/C++/SFML/lib/libFLAC.a F$:/Data/C++/SFML/lib/libsfml-system-s-d.a
   FLAGS = -g
   LINK_LIBRARIES = F:/Data/C++/SFML/lib/libsfml-system-s-d.a  F:/Data/C++/SFML/lib/libsfml-window-s-d.a  F:/Data/C++/SFML/lib/libsfml-graphics-s-d.a  F:/Data/C++/SFML/lib/libsfml-audio-s-d.a  F:/Data/C++/SFML/lib/libsfml-network-s-d.a  F:/Data/C++/SFML/lib/libsfml-window-s-d.a  -lgdi32  -lOpenGL32  F:/Data/C++/SFML/lib/libfreetype.a  F:/Data/C++/SFML/lib/libopenal32.a  F:/Data/C++/SFML/lib/libvorbisfile.a  F:/Data/C++/SFML/lib/libvorbisenc.a  F:/Data/C++/SFML/lib/libvorbis.a  F:/Data/C++/SFML/lib/libogg.a  F:/Data/C++/SFML/lib/libFLAC.a  F:/Data/C++/SFML/lib/libsfml-system-s-d.a  -lwinmm  -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Balls.dir
@@ -88,7 +96,7 @@ build Balls.exe: CXX_EXECUTABLE_LINKER__Balls_Debug CMakeFiles/Balls.dir/main.cp
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D F:\Data\C++\Balls\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D F:\Data\GitHub\Public\C-Projects\Balls\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -99,7 +107,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D F:\Data\C++\Balls\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SF:\Data\C++\Balls -BF:\Data\C++\Balls\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D F:\Data\GitHub\Public\C-Projects\Balls\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SF:\Data\GitHub\Public\C-Projects\Balls -BF:\Data\GitHub\Public\C-Projects\Balls\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -117,7 +125,7 @@ build Balls: phony Balls.exe
 # =============================================================================
 
 #############################################
-# Folder: F:/Data/C++/Balls/cmake-build-debug
+# Folder: F:/Data/GitHub/Public/C-Projects/Balls/cmake-build-debug
 
 build all: phony Balls.exe
 

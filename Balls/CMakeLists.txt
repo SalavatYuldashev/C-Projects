@@ -3,7 +3,7 @@ project(Balls)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(Balls main.cpp "Source Files/Game.cpp" "Header Files/Game.h")
+add_executable(Balls main.cpp "Source Files/Game.cpp" "Header Files/Game.h" "Source Files/Player.cpp" "Header Files/Player.h")
 
 set(SFML_STATIC_LIBRARIES TRUE)
 set(SFML_DIR F:/Data/C++/SFML/lib/cmake/SFML)

@@ -1,4 +1,4 @@
-# Install script for directory: F:/Data/C++/Balls
+# Install script for directory: F:/Data/GitHub/Public/C-Projects/Balls
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "F:/Data/C++/Balls/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "F:/Data/GitHub/Public/C-Projects/Balls/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

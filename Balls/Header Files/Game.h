@@ -1,13 +1,11 @@
 // Created by Salavat on 09.09.2022.
 #pragma once
 
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Network.hpp>
 #include <iostream>
 #include <ctime>
+
+#include "Player.h"
+
 
 class Game
 {
@@ -16,6 +14,8 @@ class Game
     sf::VideoMode videoMode;
     sf::RenderWindow* window;
     bool endGame;
+    sf::Event event;
+    Player* player = new Player(300.,300.);
 
     //Private functions
     void initWindow();
@@ -32,6 +32,8 @@ class Game
     //Functions
     void render();
     void update();
+    [[nodiscard]] bool running() const;
+    void pollEvents();
 
 
 
