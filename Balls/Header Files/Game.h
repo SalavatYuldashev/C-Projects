@@ -22,10 +22,16 @@ class Game
     float spawnTimerMax;
     float spawnTimer;
     int maxSwagBalls;
+    int points;
+    sf::Font font;
+    sf::Text guiText;
+
 
     //Private functions
     void initWindow();
     void initVariables();
+    void initFont();
+    void initText();
 
  public:
     //Constructors and Destructors
@@ -42,6 +48,7 @@ class Game
     void pollEvents();
     void spawnSwagBalls();
     void updateCollision();
+    void renderGUI(sf::RenderTarget target);
 };
 
 

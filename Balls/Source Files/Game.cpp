@@ -6,6 +6,8 @@ Game::Game()
 {
     initVariables();
     initWindow();
+    initFont();
+    initText();
 }
 
 Game::~Game()
@@ -26,7 +28,7 @@ void Game::initVariables()
     spawnTimerMax = 10.f;
     spawnTimer = spawnTimerMax;
     maxSwagBalls = 2000;
-
+    points = 0;
 }
 
 //Public functions
@@ -40,7 +42,7 @@ void Game::render()
     {
         i.render(*window);
     }
-
+    renderGUI();
     window->display();
 }
 void Game::update()
@@ -96,8 +98,26 @@ void Game::updateCollision()
         if (player->getShape().getGlobalBounds().
             intersects(swagBalls[i].getShape().getGlobalBounds()))
         {
-            swagBalls.erase(swagBalls.begin()+i);
+            swagBalls.erase(swagBalls.begin() + i);
         }
     }
 
+}
+void Game::initFont()
+{
+    if (font.loadFromFile("../Fonts/Pixellettersfull.ttf"))
+    {
+        std::cout << "LoadFont" << std::endl;
+    }
+}
+void Game::initText()
+{
+    guiText.setFont(font);
+    guiText.setFillColor(sf::Color::White);
+    guiText.setCharacterSize(24);
+    guiText.setString("TEST");
+}
+void Game::renderGUI(sf::RenderTarget target)
+{
+    target.draw(guiText);
 }

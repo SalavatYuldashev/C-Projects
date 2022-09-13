@@ -19,7 +19,6 @@ void Player::initVariables()
 {
     movementSpeed = 5.f;
     hpMax = 10;
-    points = 0;
 }
 void Player::initShape()
 {
