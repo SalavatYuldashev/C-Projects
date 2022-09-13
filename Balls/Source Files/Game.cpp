@@ -27,7 +27,7 @@ void Game::initVariables()
     endGame = false;
     spawnTimerMax = 10.f;
     spawnTimer = spawnTimerMax;
-    maxSwagBalls = 2000;
+    maxSwagBalls = 30;
     points = 0;
 }
 
@@ -42,19 +42,31 @@ void Game::render()
     {
         i.render(*window);
     }
-    renderGUI();
+    renderGUI(window);
+
+    //Render end text
+    if (endGame)
+    {
+        window->draw(endGameText);
+    }
+
     window->display();
 }
 void Game::update()
 {
     pollEvents();
-    spawnSwagBalls();
-    player->update(window);
-    updateCollision();
+    if (endGame == false)
+    {
+        spawnSwagBalls();
+        updatePlayer();
+        updateCollision();
+        updateGUI();
+    }
+
 }
 bool Game::running() const
 {
-    return window->isOpen();
+    return window->isOpen() /*&& !getEndGame()*/;
 }
 void Game::pollEvents()
 {
@@ -85,7 +97,7 @@ void Game::spawnSwagBalls()
     {
         if (swagBalls.size() < maxSwagBalls)
         {
-            swagBalls.push_back(SwagBall(*this->window));
+            swagBalls.push_back(SwagBall(*this->window, randBallType()));
             spawnTimer = 0.f;
         }
 
@@ -98,6 +110,20 @@ void Game::updateCollision()
         if (player->getShape().getGlobalBounds().
             intersects(swagBalls[i].getShape().getGlobalBounds()))
         {
+            std::cout << static_cast<int>(swagBalls[i].getType()) << std::endl;
+            switch (swagBalls[i].getType())
+            {
+            case SwagBallTypes::DAMAGING:
+                player->takeDamage(1);
+                break;
+            case SwagBallTypes::DEFAULT:
+                points++; //Add points
+                break;
+            case SwagBallTypes::HEALING:
+                player->gainHealth(1);
+                break;
+            }
+            //Remove the ball
             swagBalls.erase(swagBalls.begin() + i);
         }
     }
@@ -114,10 +140,50 @@ void Game::initText()
 {
     guiText.setFont(font);
     guiText.setFillColor(sf::Color::White);
-    guiText.setCharacterSize(24);
-    guiText.setString("TEST");
+    guiText.setCharacterSize(32);
+
+    //End game text
+    endGameText.setFont(font);
+    endGameText.setFillColor(sf::Color::Magenta);
+    endGameText.setCharacterSize(128);
+    endGameText.setPosition(130.f, 200.f);
+    endGameText.setString("GAME OVER!");
+
 }
-void Game::renderGUI(sf::RenderTarget target)
+void Game::renderGUI(sf::RenderTarget* target)
 {
-    target.draw(guiText);
+    target->draw(guiText);
+}
+void Game::updateGUI()
+{
+    std::stringstream ss;
+    ss << "POINTS: " << points << std::endl
+       << "HP: " << player->getHP() << " / " << player->getHPMax();
+    guiText.setString(ss.str());
+}
+const int Game::randBallType()
+{
+    int type = SwagBallTypes::DEFAULT;
+    int randValue = rand() % 100 + 1;
+    if (randValue >= 70 && randValue <= 90)
+    {
+        type = SwagBallTypes::DAMAGING;
+    }
+    if (randValue >= 90 && randValue <= 100)
+    {
+        type = SwagBallTypes::HEALING;
+    }
+    return type;
+}
+const bool& Game::getEndGame() const
+{
+    return endGame;
+}
+void Game::updatePlayer()
+{
+    player->update(window);
+    if (player->getHP() <= 0)
+    {
+        endGame = true;
+    }
 }

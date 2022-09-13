@@ -4,10 +4,10 @@
 #include <iostream>
 #include <ctime>
 #include <vector>
+#include <sstream>
 
 #include "Player.h"
 #include "SwagBall.h"
-
 
 class Game
 {
@@ -17,7 +17,7 @@ class Game
     sf::RenderWindow* window;
     bool endGame;
     sf::Event event;
-    Player* player = new Player(300.,300.);
+    Player* player = new Player(300., 300.);
     std::vector<SwagBall> swagBalls;
     float spawnTimerMax;
     float spawnTimer;
@@ -25,6 +25,7 @@ class Game
     int points;
     sf::Font font;
     sf::Text guiText;
+    sf::Text endGameText;
 
 
     //Private functions
@@ -38,7 +39,7 @@ class Game
     Game();
     ~Game();
     //Accessors
-
+    const bool& getEndGame() const;
     //Modifiers
 
     //Functions
@@ -47,8 +48,11 @@ class Game
     [[nodiscard]] bool running() const;
     void pollEvents();
     void spawnSwagBalls();
+    void updatePlayer();
     void updateCollision();
-    void renderGUI(sf::RenderTarget target);
+    void renderGUI(sf::RenderTarget* target);
+    void updateGUI();
+    const int randBallType();
 };
 
 

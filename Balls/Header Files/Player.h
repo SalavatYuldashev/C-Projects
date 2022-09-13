@@ -28,8 +28,17 @@ class Player
     //Public function
     void render(sf::RenderTarget* target);
     void update(const sf::RenderTarget* target);
+
     void updateWindowBoundsCollision(sf::RenderTarget* target);
     void updateInput();
+    void takeDamage (const int damage);
+    void gainHealth(const int health);
+
+
+
+    //Accessors
     const sf::RectangleShape& getShape() const;
+    const int& getHP() const;
+    const int& getHPMax() const;
 };
 

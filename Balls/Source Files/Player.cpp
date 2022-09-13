@@ -19,6 +19,7 @@ void Player::initVariables()
 {
     movementSpeed = 5.f;
     hpMax = 10;
+    hp = 5;
 }
 void Player::initShape()
 {
@@ -81,8 +82,43 @@ void Player::updateWindowBoundsCollision(sf::RenderTarget* target)
     }
 
 }
+
+void Player::takeDamage(const int damage)
+{
+    if (hp > 0)
+    {
+        hp -= damage;
+    }
+    if (hp < 0)
+    {
+        hp = 0;
+    }
+}
+
+void Player::gainHealth(const int health)
+{
+    if (hp < hpMax)
+    {
+        hp += health;
+    }
+    if (hp > hpMax)
+    {
+        hp = hpMax;
+    }
+}
+
+//Accessors
 const sf::RectangleShape& Player::getShape() const
 {
     return shape;
+}
+
+const int& Player::getHP() const
+{
+    return hp;
+}
+const int& Player::getHPMax() const
+{
+    return hpMax;
 }
 
