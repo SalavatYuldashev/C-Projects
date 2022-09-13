@@ -157,8 +157,8 @@ void Game::renderGUI(sf::RenderTarget* target)
 void Game::updateGUI()
 {
     std::stringstream ss;
-    ss << "POINTS: " << points << std::endl
-       << "HP: " << player->getHP() << " / " << player->getHPMax();
+    ss << "  POINTS: " << points << std::endl
+       << "  HP: " << player->getHP() << " / " << player->getHPMax();
     guiText.setString(ss.str());
 }
 const int Game::randBallType()

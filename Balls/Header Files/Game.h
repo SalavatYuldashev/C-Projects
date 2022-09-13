@@ -27,7 +27,6 @@ class Game
     sf::Text guiText;
     sf::Text endGameText;
 
-
     //Private functions
     void initWindow();
     void initVariables();

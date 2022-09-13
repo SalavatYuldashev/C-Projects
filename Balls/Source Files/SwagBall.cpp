@@ -5,9 +5,8 @@
 #include "../Header Files/SwagBall.h"
 //Constructors and Destructors
 SwagBall::SwagBall(const sf::RenderWindow& window, int type)
-
 {
-   SwagBall::type = type;
+    SwagBall::type = type;
     initShape(window);
 }
 SwagBall::~SwagBall()

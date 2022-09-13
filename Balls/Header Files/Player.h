@@ -31,10 +31,8 @@ class Player
 
     void updateWindowBoundsCollision(sf::RenderTarget* target);
     void updateInput();
-    void takeDamage (const int damage);
+    void takeDamage(const int damage);
     void gainHealth(const int health);
-
-
 
     //Accessors
     const sf::RectangleShape& getShape() const;
